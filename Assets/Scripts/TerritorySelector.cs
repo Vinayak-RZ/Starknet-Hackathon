@@ -7,6 +7,7 @@ public class TerritorySelector : MonoBehaviour
     private Color originalColor;
     private SpriteRenderer selectedSpriteRenderer;
     public Material pulseLineMaterial;
+    public GameObject drawingPrefab;
     private List<LineRenderer> lineRenderers = new List<LineRenderer>();
 
     void Update()
@@ -67,17 +68,15 @@ public class TerritorySelector : MonoBehaviour
     {
         foreach (Territory neighbor in territory.neighbors)
         {
-            GameObject lineObj = new GameObject("NeighborLine");
+            GameObject lineObj = Instantiate(drawingPrefab);
             lineObj.transform.parent = territory.transform;
 
-            LineRenderer lr = lineObj.AddComponent<LineRenderer>();
+            LineRenderer lr = lineObj.GetComponent<LineRenderer>();
             lr.positionCount = 2;
             lr.startWidth = 0.1f;
             lr.endWidth = 0.1f;
-
-            lr.material = new Material(Shader.Find("Sprites/Default"));
-            lr.startColor = Color.yellow;
-            lr.endColor = Color.yellow;
+            lr.startColor = Color.cyan;
+            lr.endColor = Color.cyan;
 
             Vector3 startPos = territory.transform.position;
             Vector3 endPos = neighbor.transform.position;
