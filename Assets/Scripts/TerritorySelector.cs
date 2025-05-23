@@ -44,7 +44,7 @@ public class TerritorySelector : MonoBehaviour
         if (selectedSpriteRenderer != null)
         {
             originalColor = selectedSpriteRenderer.color;
-            selectedSpriteRenderer.color = Color.blue; 
+            selectedSpriteRenderer.color = originalColor*1.5f; 
         }
 
         DrawNeighborLines(selectedTerritory);
