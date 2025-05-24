@@ -2,4 +2,5 @@ Library/*
 Log/*
 Temp/*
 obj/*
-.vscode
+.vscode/*
+Logs/*
