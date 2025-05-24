@@ -65,30 +65,39 @@ public class TerritorySelector : MonoBehaviour
     }
 
     void DrawNeighborLines(Territory territory)
-    {
-        foreach (Territory neighbor in territory.neighbors)
         {
-            GameObject lineObj = Instantiate(drawingPrefab);
-            lineObj.transform.parent = territory.transform;
+            foreach (Territory neighbor in territory.neighbors)
+            {
+                GameObject lineObj = Instantiate(drawingPrefab);
+                lineObj.transform.parent = territory.transform;
 
-            LineRenderer lr = lineObj.GetComponent<LineRenderer>();
-            lr.positionCount = 2;
-            lr.startWidth = 0.1f;
-            lr.endWidth = 0.1f;
-            lr.startColor = Color.cyan;
-            lr.endColor = Color.cyan;
+                LineRenderer lr = lineObj.GetComponent<LineRenderer>();
+                lr.positionCount = 5;  // More points = smoother curvesss
+                lr.startWidth = 0.1f;
+                lr.endWidth = 0.1f;
+                lr.startColor = Color.cyan;
+                lr.endColor = Color.cyan;
 
-            Vector3 startPos = territory.transform.position;
-            Vector3 endPos = neighbor.transform.position;
-            startPos.z = 0f;  // keep lines in 2D plane
-            endPos.z = 0f;
+                Vector3 startPos = territory.transform.position;
+                Vector3 endPos = neighbor.transform.position;
+                startPos.z = 0f;
+                endPos.z = 0f;
 
-            lr.SetPosition(0, startPos);
-            lr.SetPosition(1, endPos);
+                Vector3 midPoint = (startPos + endPos) / 2f + Vector3.up * 0.5f;
 
-            lineRenderers.Add(lr);
+                // Using Bezier curve
+                for (int i = 0; i < lr.positionCount; i++)
+                {
+                    float t = i / (lr.positionCount - 1f);
+                    Vector3 pointOnCurve = Mathf.Pow(1 - t, 2) * startPos +
+                                        2 * (1 - t) * t * midPoint +
+                                        Mathf.Pow(t, 2) * endPos;
+                    lr.SetPosition(i, pointOnCurve);
+                }
+
+                lineRenderers.Add(lr);
+            }
         }
-    }
 
     void ClearNeighborLines()
     {

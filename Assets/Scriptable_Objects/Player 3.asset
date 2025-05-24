@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Player 3
   m_EditorClassIdentifier: 
   playerName: Nano
-  playerColor: {r: 0.49411768, g: 0.18823531, b: 0.40000004, a: 1}
+  playerColor: {r: 0.16078432, g: 0.08235294, b: 0.47058827, a: 1}
   ownedTerritories:
   - {fileID: 0}
   - {fileID: 0}

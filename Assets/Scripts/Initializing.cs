@@ -39,10 +39,12 @@ public class AssignTerritoryAndTroops : MonoBehaviour
             }
             territory.Troopscount = initialTroopsPerTerritory;//Giving 1 troop to each territory initially
             Transform child = territory.transform.GetChild(0);
-            SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+            SpriteRenderer sr = territory.transform.GetComponent<SpriteRenderer>();
+            SpriteRenderer sr_child = child.GetComponent<SpriteRenderer>();
             if (sr != null)
             {
-                sr.color = currentPlayer.playerColor;
+                sr.color = currentPlayer.playerColor * 2f;
+                sr_child.color = currentPlayer.playerColor;
                 // sr.color = Color.blue;
             }
 

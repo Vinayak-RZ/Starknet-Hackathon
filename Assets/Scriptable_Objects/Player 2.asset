@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Player 2
   m_EditorClassIdentifier: 
   playerName: Sasura
-  playerColor: {r: 0.2901961, g: 0.48235297, b: 0.2509804, a: 1}
+  playerColor: {r: 0, g: 0.3137255, b: 0.16078432, a: 1}
   ownedTerritories:
   - {fileID: 0}
   - {fileID: 0}
