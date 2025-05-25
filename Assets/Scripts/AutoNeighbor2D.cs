@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class AutoNeighbor2D : MonoBehaviour
 {
-    [ContextMenu("Auto-Assign Neighbors (2D Overlap)")]
+    [ContextMenu("Auto-Assign Neighbors (4-Directional Raycast)")]
     void AutoAssignNeighbors()
     {
         Territory[] territories = FindObjectsOfType<Territory>();
@@ -14,36 +14,29 @@ public class AutoNeighbor2D : MonoBehaviour
         {
             t.neighbors.Clear(); // Clear existing neighbors
 
-            Collider2D thisCollider = t.GetComponent<Collider2D>();
-            if (thisCollider == null)
+            Vector2 origin = t.transform.position;
+            float rayDistance = 0.5f;
+            Vector2[] directions = new Vector2[] {
+                Vector2.up, Vector2.down, Vector2.left, Vector2.right
+            };
+
+            foreach (Vector2 dir in directions)
             {
-                Debug.LogWarning($"{t.name} has no 2D collider!");
-                continue;
-            }
+                RaycastHit2D hit = Physics2D.Raycast(origin, dir, rayDistance);
 
-            // Get all overlapping colliders
-            ContactFilter2D filter = new ContactFilter2D();
-            filter.useTriggers = false;
-            Collider2D[] results = new Collider2D[50];
-
-            int count = thisCollider.Overlap(filter, results);
-
-            for (int i = 0; i < count; i++)
-            {
-                Collider2D col = results[i];
-                if (col == null || col == thisCollider) continue;
-
-                Territory neighbor = col.GetComponent<Territory>();
-                if (neighbor != null && !t.neighbors.Contains(neighbor))
+                if (hit.collider != null && hit.collider.gameObject != t.gameObject)
                 {
-                    t.neighbors.Add(neighbor);
-                    EditorUtility.SetDirty(t); // Mark as changed
+                    Territory neighbor = hit.collider.GetComponent<Territory>();
+                    if (neighbor != null && !t.neighbors.Contains(neighbor))
+                    {
+                        t.neighbors.Add(neighbor);
+                        EditorUtility.SetDirty(t); // Mark as changed for saving
+                    }
                 }
             }
         }
 
-        Debug.Log("Territory neighbors assigned.");
+        Debug.Log("Territory neighbors assigned via directional raycasting.");
     }
 }
 #endif
-

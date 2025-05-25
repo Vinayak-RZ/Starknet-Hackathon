@@ -73,10 +73,10 @@ public class TerritorySelector : MonoBehaviour
 
                 LineRenderer lr = lineObj.GetComponent<LineRenderer>();
                 lr.positionCount = 5;  // More points = smoother curvesss
-                lr.startWidth = 0.1f;
-                lr.endWidth = 0.1f;
-                lr.startColor = Color.cyan;
-                lr.endColor = Color.cyan;
+                lr.startWidth = 0.5f;
+                lr.endWidth = 0.5f;
+                lr.startColor = Color.white;
+                lr.endColor = Color.white;
 
                 Vector3 startPos = territory.transform.position;
                 Vector3 endPos = neighbor.transform.position;
