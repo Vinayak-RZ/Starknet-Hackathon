@@ -12,6 +12,7 @@ public class TerritorySelector : MonoBehaviour
 
     void Update()
     {
+        return;
         if (Input.GetMouseButtonDown(0))  
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

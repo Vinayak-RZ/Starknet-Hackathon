@@ -28,21 +28,16 @@ public class Territory : MonoBehaviour
     public void UpdateTerritoryOwner(Player newOwner)
     {
         owner = newOwner;
-        Transform child = gameObject.transform.GetChild(0);
-        SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
-        if (sr != null)
-        {
-            sr.color = owner.playerColor;
-        }
+        UpdateTerritoryColor();
     }
 
-    public void UpdateTerritoryColor(bool isHighlighted = false)
+    public void UpdateTerritoryColor(float alpha = 1f)
     {
         Transform child = gameObject.transform.GetChild(0);
         SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
         if (sr != null)
         {
-            sr.color = owner.playerColor * (isHighlighted ? 1.5f : 1f);
+            sr.color = owner.playerColor * alpha;
         }
     }
 }

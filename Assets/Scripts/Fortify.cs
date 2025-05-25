@@ -62,10 +62,10 @@ public class Fortify : MonoBehaviour
         // TODO: Highlight the selected territory and all possible target territories
         possibleTargetTerritories.Clear();
         FindPossibleTargetTerritories(territory, territory);
-        territory.UpdateTerritoryColor(true); 
+        territory.UpdateTerritoryColor(2.5f); 
         foreach (Territory target in possibleTargetTerritories)
         {
-            target.UpdateTerritoryColor(true); 
+            target.UpdateTerritoryColor(1.5f); 
         }
     }
 

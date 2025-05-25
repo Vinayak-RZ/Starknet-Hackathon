@@ -14,7 +14,7 @@ public class Attack : MonoBehaviour
 
     void Update()
     {
-        // return;
+        return;
         if (Input.GetMouseButtonDown(0))  
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

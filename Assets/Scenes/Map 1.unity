@@ -5067,6 +5067,51 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9156897c0ee9044c997677fd0a705d9, type: 3}
+--- !u!1 &736302771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 736302773}
+  - component: {fileID: 736302772}
+  m_Layer: 0
+  m_Name: Fortify
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &736302772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736302771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d12a377a950d1e84aa0a209a980c71ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 11400000, guid: a515314bf531de44f8c13c10346a1aa5, type: 2}
+--- !u!4 &736302773
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736302771}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &737223730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6114,6 +6159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 11400000, guid: a515314bf531de44f8c13c10346a1aa5, type: 2}
   drawingPrefab: {fileID: 3402698882045694846, guid: 16dc00cc738bc84479de24d9514191d1, type: 3}
+  damageIndicatorPrefab: {fileID: 0}
 --- !u!4 &854216814
 Transform:
   m_ObjectHideFlags: 0
@@ -14835,3 +14881,5 @@ SceneRoots:
   - {fileID: 1746149927}
   - {fileID: 1603985350}
   - {fileID: 429582271}
+  - {fileID: 854216814}
+  - {fileID: 736302773}
