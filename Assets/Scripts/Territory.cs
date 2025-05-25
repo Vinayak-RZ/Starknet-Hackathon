@@ -35,5 +35,15 @@ public class Territory : MonoBehaviour
             sr.color = owner.playerColor;
         }
     }
+
+    public void UpdateTerritoryColor(bool isHighlighted = false)
+    {
+        Transform child = gameObject.transform.GetChild(0);
+        SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+        if (sr != null)
+        {
+            sr.color = owner.playerColor * (isHighlighted ? 1.5f : 1f);
+        }
+    }
 }
 
