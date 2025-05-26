@@ -28,7 +28,7 @@ public class Draft : MonoBehaviour
 
     void TerritoryClicked(Territory territory)
     {
-         if (territory.owner == player)
+         if (territory.owner == player && troopsToDraft > 0)
         {
             Debug.Log("Clicked on own territory.");
             troopsToDraft -= 1;
