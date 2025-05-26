@@ -27,6 +27,7 @@ public class PauseManager : MonoBehaviour
         else
         {
             PauseScreen.SetActive(false);
+            DraftButton.SetActive(true);
         }
     }
 }

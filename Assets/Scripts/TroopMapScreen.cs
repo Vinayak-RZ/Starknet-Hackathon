@@ -27,6 +27,7 @@ public class MapScreeen : MonoBehaviour
         else
         {
             MapScreen.SetActive(false);
+            DraftButton1.SetActive(true);
         }
     }
 }

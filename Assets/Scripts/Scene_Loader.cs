@@ -6,23 +6,32 @@ public class SceneLoader : MonoBehaviour
     //Load a scene by name
     public void LoadScene(string sceneName)
     {
+        PlayerPrefs.SetString("lastscene", SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(sceneName);
+    }
+    public void SetNumberPlayerScene(int number)
+    {
+        PlayerPrefs.SetString("lastscene", SceneManager.GetActiveScene().name);
+        PlayerPrefs.SetInt("numberOfPlayers", number);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("Map 1");
     }
 
     //Reload the current scene
     public void ReloadScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        string sceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(sceneName);
+        PlayerPrefs.Save();
     }
 
     //Load previous scene (if needed)
     public void LoadPreviousScene()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        if (currentSceneIndex > 0)
-        {
-            SceneManager.LoadScene(currentSceneIndex - 1);
-        }
+        string lastsceneee = PlayerPrefs.GetString("lastscene");
+        PlayerPrefs.SetString("lastscene", SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(lastsceneee);
+        PlayerPrefs.Save();
     }
 
     //Quit the game (for builds)
