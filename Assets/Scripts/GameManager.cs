@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public Fortify fortifyScript;
     public Draft draftScript;
 
+    public EnemyAI enemyAI;
+
     private Player CurrentPlayer => players[currentPlayerIndex];
 
     private void Start()
@@ -56,6 +58,8 @@ public class GameManager : MonoBehaviour
 
         Debug.Log($"Phase changed to: {currentPhase}");
         SetActivePlayerComponents();
+
+        StartCoroutine(HandleAITurn());
     }
 
     private void EndTurn()
@@ -85,5 +89,47 @@ public class GameManager : MonoBehaviour
             draftScript.enabled = currentPhase == GamePhase.Draft;
             draftScript.player = CurrentPlayer;
         }
+    }
+
+    IEnmerator HandleAITurn()
+    {
+        enemyAI.UpdateAI(CurrentPlayer);
+        if (currentPhase == GamePhase.Draft)
+        {
+            int troopsToDraft = 3;
+            List<(Territory territory, int troops)> draftPlan = enemyAI.AiDraft(troopsToDraft);
+            foreach (var (territory, troops) in draftPlan)
+            {
+                // TODO: draft using script
+                yield return new WaitForSeconds(0.5f);
+            }
+        }
+        else if (currentPhase == GamePhase.Attack)
+        {
+            int attempts = 0;
+            while (attempts < 5) // Allow up to 5 attacks
+            {
+                var (attacker, defender) = enemyAI.AiAttack(attempts);
+                if (attacker == null || defender == null)
+                    break;
+
+                //  TODO: attack using attack script
+                yield return new WaitForSeconds(1f);
+
+                attempts++;
+            }
+            
+        }
+        else if (currentPhase == GamePhase.Fortify)
+        {
+            var (from, to, troopsToMove) = enemyAI.PlanFortify();
+            if (from != null && to != null && troopsToMove > 0)
+            {
+                // TODO: fortify using fortify script
+                yield return new WaitForSeconds(0.5f);
+            }
+        }
+
+        yield return new WaitForSeconds(1f);
     }
 }
