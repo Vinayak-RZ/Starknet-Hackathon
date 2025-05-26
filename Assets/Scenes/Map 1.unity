@@ -2594,7 +2594,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 4.9488754, z: 166.05252, w: 8.908127}
+  m_margin: {x: -5.080757, y: 4.9488754, z: 160.97177, w: 8.908127}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5914,6 +5914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57b5e1b0f4a2ea242ad022feec71eb1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UsernameScreen: {fileID: 0}
 --- !u!114 &528969067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8094,7 +8095,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 4.9488754, z: 166.05252, w: 8.908127}
+  m_margin: {x: -8.737701, y: 4.9488754, z: 159.49937, w: 8.908127}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8666,7 +8667,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 4.9488754, z: 166.05252, w: 8.908127}
+  m_margin: {x: -7.2814484, y: 4.9488754, z: 163.86815, w: 8.908127}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -9754,7 +9755,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 4.9488754, z: 166.59566, w: 8.908127}
+  m_margin: {x: -7.6212077, y: 4.9488754, z: 161.51476, w: 8.908127}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -14018,7 +14019,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 4.9488754, z: 166.59566, w: 8.908127}
+  m_margin: {x: -8.971161, y: 4.9488754, z: 158.90605, w: 8.908127}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -14634,7 +14635,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 4.9488754, z: 166.05252, w: 8.908127}
+  m_margin: {x: -6.4272537, y: 4.9488754, z: 160.20963, w: 8.908127}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -15607,7 +15608,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 4.9488754, z: 166.59566, w: 8.908127}
+  m_margin: {x: -9.465675, y: 4.9488754, z: 160.04268, w: 8.908127}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -17676,7 +17677,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 4.9488754, z: 166.05252, w: 8.908127}
+  m_margin: {x: -7.621208, y: 4.9488754, z: 158.43117, w: 8.908127}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -18482,7 +18483,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 4.9488754, z: 166.59566, w: 8.908127}
+  m_margin: {x: -9.465836, y: 4.9488754, z: 161.49875, w: 8.908127}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -19944,7 +19945,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 4.9488754, z: 166.59566, w: 8.908127}
+  m_margin: {x: -7.953911, y: 4.9488754, z: 161.08923, w: 8.908127}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -21364,7 +21365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7a78291642fc674795e0fe7ee696290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  total_initial_troop_each: 40
+  playerinitialtroops: 50
   players:
   - {fileID: 11400000, guid: a515314bf531de44f8c13c10346a1aa5, type: 2}
   - {fileID: 11400000, guid: d83e0c6c31340954c9703b890678078c, type: 2}

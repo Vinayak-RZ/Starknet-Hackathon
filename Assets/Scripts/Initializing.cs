@@ -6,7 +6,7 @@ using UnityEngine;
 public class AssignTerritoryAndTroops : MonoBehaviour
 {
     private Territory[] territories;
-    [SerializeField] private int total_initial_troop_each = 40;
+    [SerializeField] private int playerinitialtroops;
 
     [SerializeField] public List<Player> players = new List<Player>();
     [SerializeField] private int initialTroopsPerTerritory = 1;
@@ -15,7 +15,24 @@ public class AssignTerritoryAndTroops : MonoBehaviour
     {
         numberOfPlayers= Mathf.Max(PlayerPrefs.GetInt("numberOfPlayers"),2);
         territories = FindObjectsOfType<Territory>();
-        for(int i = 0;i < numberOfPlayers; i++) {
+        if (numberOfPlayers == 2)
+        {
+            playerinitialtroops = 50;
+        }
+        else if (numberOfPlayers == 3)
+        {
+            playerinitialtroops = 35;
+        }
+        else if (numberOfPlayers == 4)
+        {
+            playerinitialtroops = 30;
+        }
+        else
+        {
+            playerinitialtroops = 25;
+        }
+        for (int i = 0; i < numberOfPlayers; i++)
+        {
             players[i].ownedTerritories.Clear();
         }
         AssignTerritories();
@@ -55,8 +72,9 @@ public class AssignTerritoryAndTroops : MonoBehaviour
     void InitializeTroops() {
     for (int i = 0;i < numberOfPlayers; i++) {
         int numTerritories = players[i].ownedTerritories.Count;
+            players[i].playertroops = playerinitialtroops;//assigning total initial troops to players for UI
         //Randomly assign remaining troops
-        int remaining = total_initial_troop_each - numTerritories;
+            int remaining = playerinitialtroops- numTerritories;    
 
         while (remaining > 0) {
             Territory randomTerritory = players[i].ownedTerritories[UnityEngine.Random.Range(0, numTerritories)];

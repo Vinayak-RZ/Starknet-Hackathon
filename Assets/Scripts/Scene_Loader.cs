@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     //Load a scene by name
+    public GameObject UsernameScreen = null;
     public void LoadScene(string sceneName)
     {
         PlayerPrefs.SetString("lastscene", SceneManager.GetActiveScene().name);
@@ -15,6 +16,10 @@ public class SceneLoader : MonoBehaviour
         PlayerPrefs.SetInt("numberOfPlayers", number);
         PlayerPrefs.Save();
         SceneManager.LoadScene("Map 1");
+        // if (UsernameScreen != null)
+        // {
+        //     UsernameScreen.SetActive(true);
+        // }
     }
 
     //Reload the current scene
@@ -40,4 +45,5 @@ public class SceneLoader : MonoBehaviour
         Application.Quit();
         Debug.Log("Game Quit!"); // Just for testing in the editor
     }
+    
 }

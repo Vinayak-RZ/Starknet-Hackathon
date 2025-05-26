@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3899a584c6d6b9845961d240edf8404a, type: 3}
   m_Name: Player 5
   m_EditorClassIdentifier: 
-  playerName: Player5
+  playerName: Emily
   playerColor: {r: 0.61960787, g: 0.1764706, b: 0.0627451, a: 1}
   ownedTerritories: []

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3899a584c6d6b9845961d240edf8404a, type: 3}
   m_Name: Player 4
   m_EditorClassIdentifier: 
-  playerName: Player4
+  playerName: Nano
   playerColor: {r: 0, g: 0.27058825, b: 0.39607847, a: 1}
   ownedTerritories: []
