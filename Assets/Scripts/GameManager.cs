@@ -11,7 +11,8 @@ public enum GamePhase
 public class GameManager : MonoBehaviour
 {
     
-    public List<Player> players;  
+    public List<Player> players;
+    public List<GameObject> PlayerUI;
     public List<int> playerOrder; // Order of players for turns
     public int currentPlayerIndex = 0;
     public GamePhase currentPhase = GamePhase.Draft;
@@ -19,13 +20,19 @@ public class GameManager : MonoBehaviour
     public Attack attackScript;
     public Fortify fortifyScript;
     public Draft draftScript;
+    private int numberOfPlayers;
 
     private Player CurrentPlayer => players[currentPlayerIndex];
 
     private void Start()
     {
-        int numberOfPlayers = PlayerPrefs.GetInt("numberOfPlayers");
+        numberOfPlayers = PlayerPrefs.GetInt("numberOfPlayers");
         // TODO: initiate players list
+        numberOfPlayers = PlayerPrefs.GetInt("numberOfPlayers");
+        for (int i = numberOfPlayers; i < 5; i++)
+        {
+            PlayerUI[i].SetActive(false);
+        }
         SetActivePlayerComponents();
         Debug.Log($"Game Start: {CurrentPlayer.playerName}'s turn begins. Phase: {currentPhase}");
     }
@@ -60,7 +67,7 @@ public class GameManager : MonoBehaviour
 
     private void EndTurn()
     {
-        currentPlayerIndex = (currentPlayerIndex + 1) % players.Count;
+        currentPlayerIndex = (currentPlayerIndex + 1) % (numberOfPlayers);
         currentPhase = GamePhase.Draft;
         Debug.Log($"Turn ended. Next player: {CurrentPlayer.playerName}");
         SetActivePlayerComponents();

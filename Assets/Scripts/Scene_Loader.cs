@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     //Load a scene by name
-    public GameObject UsernameScreen = null;
+    //public GameObject UsernameScreen = null;
     public void LoadScene(string sceneName)
     {
         PlayerPrefs.SetString("lastscene", SceneManager.GetActiveScene().name);

@@ -32,8 +32,8 @@ public class FloatEffect : MonoBehaviour
     void Update()
     {
         float t = Time.time;
-        float offsetX = Mathf.Sin(t * freqX + phaseX) * (ampX/2) + Mathf.Sin(t * 2.3f + phaseX) * (noiseAmp/2);
-        float offsetY = Mathf.Cos(t * freqY + phaseY) * (ampY/2) + Mathf.Sin(t * 1.8f + phaseY) * (noiseAmp/2);
+        float offsetX = Mathf.Sin(t * freqX + phaseX) * (ampX/1.7f) + Mathf.Sin(t * 2.3f + phaseX) * (noiseAmp/1.7f);
+        float offsetY = Mathf.Cos(t * freqY + phaseY) * (ampY/1.7f) + Mathf.Sin(t * 1.8f + phaseY) * (noiseAmp/1.7f);
         button.anchoredPosition = startPos + new Vector2(offsetX, offsetY);
         //transform.localPosition = startPos + new Vector2(offsetX, offsetY);
     }

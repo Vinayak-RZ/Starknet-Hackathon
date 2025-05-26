@@ -328,7 +328,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57b5e1b0f4a2ea242ad022feec71eb1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UsernameScreen: {fileID: 0}
 --- !u!114 &816804417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,7 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c5bd1318b836f48b10bd7849d342e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 11400000, guid: a515314bf531de44f8c13c10346a1aa5, type: 2}
 --- !u!4 &816804418
 Transform:
   m_ObjectHideFlags: 0
