@@ -17,6 +17,10 @@ Players compete for global domination by capturing territories, deploying troops
 This project aims to recreate the fundamental mechanics of Risk while remaining fully customizable and extensible for further development.
 </div>
 <div>
+<div align="center">
+    <img width="1533" height="891" alt="Screenshot 2025-05-26 190623" src="https://github.com/user-attachments/assets/71f4565e-a1e8-4c69-b782-e9749559fbdf" />
+    <em>Main Menu Screen</em>
+</div>
 
 ## Game Overview
 
@@ -26,6 +30,10 @@ This project aims to recreate the fundamental mechanics of Risk while remaining 
 - **Platform**: PC 
 
 ---
+<div align="center">
+    <img width="1527" height="890" alt="Screenshot 2025-05-25 230632" src="https://github.com/user-attachments/assets/086e136b-202a-4476-9f19-c4b7b59771f7" />
+    <em>GamePlay</em>
+</div>
 
 ## Core Features
 
